@@ -1,12 +1,13 @@
 
 import React from 'react';
 import TopMenu from './TopMenu';
+import Banner from './banner';
 
 const App = () => {
   return (
     <div className="App">
       <TopMenu />
-      {/* Other content of your application */}
+      <Banner />
     </div>
   );
 };
