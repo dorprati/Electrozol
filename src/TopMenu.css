@@ -8,8 +8,12 @@
   }
   
   .logo {
-    font-size: 24px;
-    font-weight: bold;
+    width: 150px; 
+  }
+  
+  .logo-image {
+    width: 100%; 
+    height: auto; 
   }
   
   nav ul {

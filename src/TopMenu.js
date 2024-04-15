@@ -1,10 +1,11 @@
 import React from 'react';
 import './TopMenu.css';
+import logoImage from './images/img_logo.png';
 
 const TopMenu = () => {
   return (
     <div className="top-menu">
-      <div className="logo">Logo</div>
+      <div className="logo"><img src={logoImage} alt="Logo" className="logo-image" /></div>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
