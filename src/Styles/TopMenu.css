@@ -1,0 +1,98 @@
+/* TopMenu.css */
+
+/* Top Menu Container */
+.top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #232323;
+}
+
+/* Logo */
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+/* Navigation */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #c9e119;
+}
+
+/* Search Area */
+.search-area {
+  position: relative;
+}
+
+.search-area input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* Search Suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  width: 200px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-suggestions li {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-suggestions li:last-child {
+  border-bottom: none;
+}
+
+.search-suggestions li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.search-suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Cart Button */
+.cart-button button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9f00a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cart-button button:hover {
+  background-color: #f8d302;
+}

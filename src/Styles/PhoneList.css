@@ -1,0 +1,50 @@
+.phone-list-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.phone-list-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.phone-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phone-item {
+  margin-bottom: 20px;
+}
+
+.phone-link {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+.phone-image {
+  width: 80px; 
+  height: 80px; 
+  object-fit: cover; 
+  margin-right: 20px;
+}
+
+.phone-details {
+  flex-grow: 1;
+}
+
+.phone-name {
+  font-weight: bold;
+}
+
+.phone-price {
+  color: #888;
+}

@@ -1,0 +1,39 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author {
+  text-align: right;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-media {
+  display: flex;
+}
+
+.social-media a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+

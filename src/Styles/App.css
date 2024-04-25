@@ -1,0 +1,83 @@
+.phone-list-container {
+  padding: 20px;
+}
+
+.phone-list-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-style: bold;
+}
+
+.phone-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phone-item {
+  margin-bottom: 20px;
+}
+
+.phone-link {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+.phone-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.phone-details {
+  flex-grow: 1;
+}
+
+.phone-name {
+  font-weight: bold;
+}
+
+.phone-price {
+  color: #888;
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+.header {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* Main content styles */
+.main-content {
+  padding: 20px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
