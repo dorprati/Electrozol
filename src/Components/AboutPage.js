@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import '../Styles/AboutPage.css';
 
 const AboutPage = () => {
@@ -9,7 +10,13 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="about-page">
+    <motion.div
+      className="about-page"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container">
         <h2>About Electrozol</h2>
         <p>
@@ -48,9 +55,16 @@ const AboutPage = () => {
             </p>
           </>
         ) : null}
-        <button onClick={toggleReadMore}>{readMore ? 'Read Less' : 'Read More'}</button>
+        <motion.button
+          className="button" 
+          onClick={toggleReadMore}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {readMore ? 'Read Less' : 'Read More'}
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

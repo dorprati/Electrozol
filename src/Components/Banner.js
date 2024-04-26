@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import banner1 from '../images/logo1.jpg';
-import banner2 from '../images/img2.png';
+import banner2 from '../images/banner2.jpg';
 import banner3 from '../images/img3.png';
 import '../Styles/Banner.css';
 

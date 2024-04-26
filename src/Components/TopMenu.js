@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import logoImage from '../images/img_logo.png';
 import '../Styles/TopMenu.css';
 
@@ -63,8 +65,14 @@ const TopMenu = ({ products }) => {
           ))}
         </motion.ul>
       </div>
-      <div className="cart-button">
-        <button onClick={handleCartButtonClick}>Cart</button>
+      <div className="cart-button" onClick={handleCartButtonClick}>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="cart-icon"
+        >
+          <FontAwesomeIcon icon={faShoppingCart} style={{ color: 'yellow' }} />
+        </motion.div>
       </div>
     </div>
   );

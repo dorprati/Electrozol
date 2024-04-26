@@ -31,20 +31,39 @@
 }
 
 .phone-image {
-  width: 80px; 
-  height: 80px; 
-  object-fit: cover; 
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   margin-right: 20px;
 }
 
-.phone-details {
-  flex-grow: 1;
+.add-product-button {
+  margin-top: 20px;
 }
 
-.phone-name {
-  font-weight: bold;
+.add-product-form {
+  margin-top: 20px;
 }
 
-.phone-price {
-  color: #888;
+.add-product-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-product-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.add-product-form button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-product-form button:hover {
+  background-color: #0056b3;
 }
