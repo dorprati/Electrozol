@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCart } from './CartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CSSTransition } from 'react-transition-group'; 
 import '../Styles/Cart.css';
 
 const Cart = () => {
@@ -36,7 +37,6 @@ const Cart = () => {
 
   const handleSubmitDeliveryInfo = (e) => {
     e.preventDefault();
-    setShowDeliveryForm(false);
     setDeliveryInfo({
       name: '',
       address: '',
@@ -51,6 +51,10 @@ const Cart = () => {
       draggable: true,
       progress: undefined,
     });
+  
+    setTimeout(() => {
+      setShowDeliveryForm(false);
+    }, 500); 
   };
 
   return (
@@ -85,7 +89,12 @@ const Cart = () => {
           </ul>
           <div>Total Price: {calculateTotalPrice()} ILS</div>
           <button className="buy-cart-button" onClick={handleBuyCart}>Buy Cart</button>
-          {showDeliveryForm && (
+          <CSSTransition
+            in={showDeliveryForm}
+            timeout={300}
+            classNames="delivery-form"
+            unmountOnExit
+          >
             <div className="delivery-form">
               <h3>Delivery Information</h3>
               <form onSubmit={handleSubmitDeliveryInfo}>
@@ -98,7 +107,7 @@ const Cart = () => {
                 <button type="submit">Submit</button>
               </form>
             </div>
-          )}
+          </CSSTransition>
         </div>
       )}
       <ToastContainer />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import TopMenu from './Components/TopMenu';
 import Banner from './Components/Banner';
 import RunningText from './Components/RunningText';
@@ -26,6 +27,11 @@ import xiomi11 from './images/xiomi11ultra.jpg';
 import Sonyx5_3 from './images/sonyx5_3.jpg';
 import huawei40Pro from './images/Huawei40pro.jpg';
 import Motorola from './images/motorola.png';
+import iphoneSE from './images/iphonese.jpg';
+import Pixel5a from './images/pixel5a.jpg';
+import Nord from './images/nord.jpg';
+import Xiomi11Note from './images/xiomi11note.jpg';
+import LgWing from './images/lgwing.jpg';
 import './Styles/App.css';
 
 const App = () => {
@@ -123,29 +129,18 @@ const App = () => {
       name: 'iPhone SE (2022)', 
       manufacturer: 'Apple',
       price: '1999', 
-      image: 'iphone-se-2022.jpg',
+      image: iphoneSE,
       shortDescription: 'The budget-friendly iPhone with powerful features.',
       details: 'The iPhone SE (2022) features the A15 Bionic chip, a 4.7-inch Retina HD display, and advanced camera capabilities.',
       colors: ['Red', 'White', 'Black'],
       memoryOptions: ['64GB', '128GB', '256GB']
     },
     { 
-      id: 10, 
-      name: 'Samsung Galaxy Z Fold 3', 
-      manufacturer: 'Samsung',
-      price: '6999', 
-      image: 'samsung-galaxy-z-fold-3.jpg',
-      shortDescription: 'The foldable flagship from Samsung.',
-      details: 'The Samsung Galaxy Z Fold 3 features a foldable Dynamic AMOLED display, S Pen support, and powerful multitasking capabilities.',
-      colors: ['Phantom Black', 'Phantom Green', 'Phantom Silver'],
-      memoryOptions: ['256GB', '512GB']
-    },
-    { 
       id: 11, 
       name: 'Google Pixel 5a', 
       manufacturer: 'Google',
       price: '1499', 
-      image: 'google-pixel-5a.jpg',
+      image: Pixel5a,
       shortDescription: 'The mid-range Pixel with great camera performance.',
       details: 'The Google Pixel 5a features a 6.34-inch OLED display, a dual-camera system, and a long-lasting battery.',
       colors: ['Black', 'Green'],
@@ -156,7 +151,7 @@ const App = () => {
       name: 'OnePlus Nord 2', 
       manufacturer: 'OnePlus',
       price: '2999', 
-      image: 'oneplus-nord-2.jpg',
+      image: Nord,
       shortDescription: 'The mid-range OnePlus with flagship-like features.',
       details: 'The OnePlus Nord 2 features a MediaTek Dimensity 1200-AI chipset, a 6.43-inch Fluid AMOLED display, and a triple-camera setup.',
       colors: ['Gray Sierra', 'Blue Haze', 'Green Woods'],
@@ -167,40 +162,18 @@ const App = () => {
       name: 'Xiaomi Redmi Note 11 Pro', 
       manufacturer: 'Xiaomi',
       price: '1899', 
-      image: 'xiaomi-redmi-note-11-pro.jpg',
+      image: Xiomi11Note,
       shortDescription: 'The affordable Note series phone with impressive performance.',
       details: 'The Xiaomi Redmi Note 11 Pro features a MediaTek Dimensity 920 chipset, a 6.67-inch AMOLED display, and a quad-camera setup.',
       colors: ['Glacier White', 'Horizon Blue', 'Storm Black'],
       memoryOptions: ['128GB', '256GB']
     },
     { 
-      id: 14, 
-      name: 'Sony Xperia 5 III', 
-      manufacturer: 'Sony',
-      price: '3999', 
-      image: 'sony-xperia-5-iii.jpg',
-      shortDescription: 'The compact flagship Xperia with professional camera capabilities.',
-      details: 'The Sony Xperia 5 III features a 6.1-inch OLED display, a triple-camera system with ZEISS optics, and a Qualcomm Snapdragon 888 chipset.',
-      colors: ['Black', 'Green', 'Pink'],
-      memoryOptions: ['128GB', '256GB']
-    },
-    { 
-      id: 15, 
-      name: 'Huawei Mate 40 Pro', 
-      manufacturer: 'Huawei',
-      price: '5499', 
-      image: 'huawei-mate-40-pro.jpg',
-      shortDescription: 'The premium flagship from Huawei with advanced photography features.',
-      details: 'The Huawei Mate 40 Pro features a Kirin 9000 chipset, a 6.76-inch OLED display, and a Leica quad-camera setup.',
-      colors: ['Mystic Silver', 'White', 'Black'],
-      memoryOptions: ['256GB', '512GB']
-    },
-    { 
       id: 16, 
       name: 'LG Wing', 
       manufacturer: 'LG',
       price: '3999', 
-      image: 'lg-wing.jpg',
+      image: LgWing,
       shortDescription: 'The unique dual-screen phone from LG.',
       details: 'The LG Wing features a swiveling dual-screen design, a Snapdragon 765G chipset, and a triple-camera setup with a 64MP main sensor.',
       colors: ['Aurora Gray', 'Illusion Sky'],
@@ -396,12 +369,12 @@ const PhoneList = ({ products, onAddProduct, onRemoveProduct}) => {
                 <div className="phone-price">{product.price} ILS</div>
               </div>
             </Link>
-            <button onClick={() => onRemoveProduct(product.id)}>Remove</button>
+            <Button variant="danger" onClick={() => onRemoveProduct(product.id)}>Remove</Button>
           </li>
         ))}
       </ul>
       <div className="add-product-button">
-        <button onClick={() => setShowForm(true)}>Add Product</button>
+      <Button variant="primary" onClick={() => setShowForm(true)}>Add Product</Button>
       </div>
       {showForm && (
         <div className="add-product-form">

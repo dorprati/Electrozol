@@ -39,10 +39,18 @@ const TopMenu = ({ products }) => {
       </div>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <motion.li whileHover={{ scale: 1.1 }}>
+            <Link to="/">Home</Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }}>
+            <Link to="/about">About</Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }}>
+            <Link to="/products">Products</Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }}>
+            <Link to="/contact">Contact</Link>
+          </motion.li>
         </ul>
       </nav>
       <div className="search-area">

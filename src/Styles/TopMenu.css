@@ -1,6 +1,3 @@
-/* TopMenu.css */
-
-/* Top Menu Container */
 .top-menu {
   display: flex;
   align-items: center;
@@ -9,7 +6,6 @@
   background-color: #232323;
 }
 
-/* Logo */
 .logo {
   margin-right: 20px;
 }
@@ -18,7 +14,7 @@
   width: 100px;
 }
 
-/* Navigation */
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -28,6 +24,7 @@ nav ul {
 
 nav li {
   margin-right: 20px;
+  position: relative; 
 }
 
 nav li a {
@@ -47,7 +44,6 @@ nav li a {
   width: 200px;
 }
 
-/* Search Suggestions */
 .search-suggestions {
   position: absolute;
   top: 100%;
@@ -83,7 +79,7 @@ nav li a {
   background-color: #f0f0f0;
 }
 
-/* Cart Button */
+
 .cart-button button {
   padding: 8px 16px;
   border: none;
@@ -96,3 +92,5 @@ nav li a {
 .cart-button button:hover {
   background-color: #f8d302;
 }
+
+
