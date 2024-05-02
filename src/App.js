@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 import TopMenu from './Components/TopMenu';
 import Banner from './Components/Banner';
 import RunningText from './Components/RunningText';
@@ -307,7 +308,7 @@ const Home = ({ products }) => {
   );
 };
 
-const PhoneList = ({ products, onAddProduct, onRemoveProduct}) => {
+const PhoneList = ({ products, onAddProduct, onRemoveProduct }) => {
   const [showForm, setShowForm] = useState(false);
   const [newProduct, setNewProduct] = useState({
     name: '',
@@ -326,7 +327,24 @@ const PhoneList = ({ products, onAddProduct, onRemoveProduct}) => {
   };
 
   const handleAddProduct = () => {
-    onAddProduct(newProduct);
+    const newProductId = uuidv4();
+
+    const newProductItem = {
+      id: newProductId,
+      name: newProduct.name,
+      price: newProduct.price,
+      manufacturer: newProduct.manufacturer,
+      image: newProduct.image,
+      shortDescription: newProduct.shortDescription,
+      details: newProduct.details,
+      colors: newProduct.colors,
+      memoryOptions: newProduct.memoryOptions,
+    };
+
+    // Call the onAddProduct function passed from the parent component
+    onAddProduct(newProductItem);
+
+    // Reset the form fields and hide the form
     setShowForm(false);
     setNewProduct({
       name: '',
@@ -353,7 +371,6 @@ const PhoneList = ({ products, onAddProduct, onRemoveProduct}) => {
     }
   };
 
-
   return (
     <div className="phone-list-container">
       <h2>Phones</h2>
@@ -374,36 +391,35 @@ const PhoneList = ({ products, onAddProduct, onRemoveProduct}) => {
         ))}
       </ul>
       <div className="add-product-button">
-      <Button variant="primary" onClick={() => setShowForm(true)}>Add Product</Button>
+        <Button variant="primary" onClick={() => setShowForm(true)}>Add Product</Button>
       </div>
       {showForm && (
         <div className="add-product-form">
-        <h3>Add New Product</h3>
-        <form>
-          <label>Name:</label>
-          <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
-          <label>Image URL:</label>
-          <input type="text" name="image" value={newProduct.image} onChange={handleInputChange} />
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-          <label>Price:</label>
-          <input type="number" name="price" value={newProduct.price} onChange={handleInputChange} />
-          <label>Manufacturer:</label>
-          <input type="text" name="manufacturer" value={newProduct.manufacturer} onChange={handleInputChange} />
-          <label>Short Description:</label>
-          <input type="text" name="shortDescription" value={newProduct.shortDescription} onChange={handleInputChange} />
-          <label>Details:</label>
-          <textarea name="details" value={newProduct.details} onChange={handleInputChange} />
-          <label>Colors:</label>
-          <input type="text" name="colors" value={newProduct.colors.join(',')} onChange={e => setNewProduct({ ...newProduct, colors: e.target.value.split(',') })} />
-          <label>Memory Options:</label>
-          <input type="text" name="memoryOptions" value={newProduct.memoryOptions.join(',')} onChange={e => setNewProduct({ ...newProduct, memoryOptions: e.target.value.split(',') })} />
-          <button type="button" onClick={handleAddProduct}>Add</button>
-        </form>
-      </div>
+          <h3>Add New Product</h3>
+          <form>
+            <label>Name:</label>
+            <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
+            <label>Image URL:</label>
+            <input type="text" name="image" value={newProduct.image} onChange={handleInputChange} />
+            <input type="file" accept="image/*" onChange={handleImageUpload} />
+            <label>Price:</label>
+            <input type="number" name="price" value={newProduct.price} onChange={handleInputChange} />
+            <label>Manufacturer:</label>
+            <input type="text" name="manufacturer" value={newProduct.manufacturer} onChange={handleInputChange} />
+            <label>Short Description:</label>
+            <input type="text" name="shortDescription" value={newProduct.shortDescription} onChange={handleInputChange} />
+            <label>Details:</label>
+            <textarea name="details" value={newProduct.details} onChange={handleInputChange} />
+            <label>Colors:</label>
+            <input type="text" name="colors" value={newProduct.colors.join(',')} onChange={e => setNewProduct({ ...newProduct, colors: e.target.value.split(',') })} />
+            <label>Memory Options:</label>
+            <input type="text" name="memoryOptions" value={newProduct.memoryOptions.join(',')} onChange={e => setNewProduct({ ...newProduct, memoryOptions: e.target.value.split(',') })} />
+            <button type="button" onClick={handleAddProduct}>Add</button>
+          </form>
+        </div>
       )}
-      </div>
-    );
-  };
-
+    </div>
+  );
+};
 
 export default App;
